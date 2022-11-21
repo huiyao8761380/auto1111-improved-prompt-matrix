@@ -12,7 +12,7 @@ class Script(scripts.Script):
         return "Improved prompt matrix random"
 
     def ui(self, is_img2img):
-        dummy = gr.Checkbox(label="Usage: <corgi|cat>,<goggles|a hat>")
+        dummy = gr.Checkbox(label="Start random select: <tag1|tga2|tag3> ")
         return [dummy]
 
     def run(self, p, dummy):
@@ -68,8 +68,8 @@ class Script(scripts.Script):
         for my_prompt in all_prompts: 
             rand_i=random.randint(0,promptlength)
             out_prompts.append(all_prompts[rand_i])
-            all_prompts.remove(all_prompts[rand_i])
-            promptlength=len(all_prompts)-1
+            #all_prompts.remove(all_prompts[rand_i])#随机不重复大概
+            #promptlength=len(all_prompts)-1#
             
         #print(f"out_prompts：{out_prompts}")
 
