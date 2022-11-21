@@ -12,7 +12,8 @@ An input of `a <corgi|cat> wearing <goggles|a hat>`
 Will output 4 prompts: `a corgi wearing goggles`, `a corgi wearing a hat`, `a cat wearing goggles`, `a cat wearing a hat`
 
 Each output prompt will be generated for each seed when using a `batch count` > 1. `batch size` is ignored.
-
+##
+![1](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/6%25O)S%40)J_ADWWZM18%40U1JM3.png)
  ##
 
  ##
@@ -20,3 +21,7 @@ Each output prompt will be generated for each seed when using a `batch count` > 
  ##
 
 ![CN](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix/blob/main/7B7JUF%25MY2ZQ0S4%7B%5BKKYRDG.png)
+##
+![2](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/GZFBCDAEVYSBF2%5DA%60ZHY2V3.png)
+
+ ### 脚本任选其一（Choose either script）
