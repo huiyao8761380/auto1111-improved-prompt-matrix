@@ -14,9 +14,10 @@ class Script(scripts.Script):
     def ui(self, is_img2img):
         dummy = gr.Checkbox(label="Start random script ,<short|long> hair,")
         sametag = gr.Checkbox(label="Same tag can be generated.", value=False)
-        return [dummy,sametag]
+        norand = gr.Checkbox(label="One of each,not random", value=False)
+        return [dummy,sametag,norand]
 
-    def run(self, p, dummy,sametag):
+    def run(self, p, dummy,sametag,norand):
         #modules.processing.fix_seed(p)
 
         original_prompt = p.prompt[0] if type(p.prompt) == list else p.prompt
@@ -66,12 +67,13 @@ class Script(scripts.Script):
         promptlength=len(all_prompts)-1
         out_prompts = []
         #rand_prompt = all_prompts[random.randint(0,promptlength)]
-        for my_prompt in all_prompts: 
-            rand_i=random.randint(0,promptlength)
-            out_prompts.append(all_prompts[rand_i])
-            if sametag==False:
-                all_prompts.remove(all_prompts[rand_i])#大概随机不重复
-                promptlength=len(all_prompts)-1#
+        if norand==False:
+            for my_prompt in all_prompts: 
+                rand_i=random.randint(0,promptlength)
+                out_prompts.append(all_prompts[rand_i])
+                if sametag==False:
+                    all_prompts.remove(all_prompts[rand_i])#大概随机不重复
+                    promptlength=len(all_prompts)-1#
             
         #print(f"out_prompts：{out_prompts}")
 
@@ -87,8 +89,10 @@ class Script(scripts.Script):
         
         
         #all_prompts.append(rand_prompt)
-
-        p.prompt = out_prompts*p.n_iter #all_prompts * p.n_iter
+        if norand:
+            p.prompt = all_prompts * p.n_iter #all_prompts * p.n_iter
+        else:
+            p.prompt = out_prompts*p.n_iter
         #p.seed =-1#[item for item in range(int(p.seed), int(p.seed) + p.n_iter) for _ in range(len(all_prompts))]
         p.n_iter = total_images
         #print(f"p.n_iter：{p.n_iter}") #=batch_count
