@@ -9,12 +9,12 @@ from modules.processing import process_images, StableDiffusionProcessingTxt2Img
 
 class Script(scripts.Script):
     def title(self):
-        return "Improved prompt matrix random"
+        return "随机提示矩阵"
 
     def ui(self, is_img2img):
-        dummy = gr.Textbox(label="random script has been started",value="tag example:  ,<short|long|messy> hair,")
-        sametag = gr.Checkbox(label="Same tag can be generated.", value=False)
-        norand = gr.Checkbox(label="Not random,do each prompt", value=False)
+        dummy = gr.Textbox(label="随机脚本已开启",value="tag示例:  ,<short|long|messy> hair,")
+        sametag = gr.Checkbox(label="允许随机生成相同tag提示", value=False)
+        norand = gr.Checkbox(label="不随机,按序执行每个tag提示", value=False)
         return [dummy,sametag,norand]
 
     def run(self, p, dummy,sametag,norand):
