@@ -3,6 +3,7 @@
 This script is [advanced-prompt-matrix](https://github.com/GRMrGecko/stable-diffusion-webui-automatic/blob/advanced_matrix/scripts/advanced_prompt_matrix.py) modified to support `batch count`. Grids are not created.  
 
 https://github.com/ArrowM/auto1111-improved-prompt-matrix
+https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts
 
 ## Usage
 
@@ -25,3 +26,7 @@ Each output prompt will be generated for each seed when using a `batch count` > 
 ![2](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/cn2.png)
 
  ### 脚本任选其一（Choose either script）
+ 
+ ## setup script：
+ ![en3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en3.png)
+ ![cn3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/cn3.png)
