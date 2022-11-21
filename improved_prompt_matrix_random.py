@@ -12,10 +12,11 @@ class Script(scripts.Script):
         return "Improved prompt matrix random"
 
     def ui(self, is_img2img):
-        dummy = gr.Checkbox(label="Start random select: <tag1|tga2|tag3> ")
-        return [dummy]
+        dummy = gr.Checkbox(label="Start random script ,<short|long> hair,")
+        sametag = gr.Checkbox(label="Same tag can be generated.", value=False)
+        return [dummy,sametag]
 
-    def run(self, p, dummy):
+    def run(self, p, dummy,sametag):
         #modules.processing.fix_seed(p)
 
         original_prompt = p.prompt[0] if type(p.prompt) == list else p.prompt
@@ -68,8 +69,9 @@ class Script(scripts.Script):
         for my_prompt in all_prompts: 
             rand_i=random.randint(0,promptlength)
             out_prompts.append(all_prompts[rand_i])
-            #all_prompts.remove(all_prompts[rand_i])#随机不重复大概
-            #promptlength=len(all_prompts)-1#
+            if sametag==False:
+                all_prompts.remove(all_prompts[rand_i])#大概随机不重复
+                promptlength=len(all_prompts)-1#
             
         #print(f"out_prompts：{out_prompts}")
 
