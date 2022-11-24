@@ -32,7 +32,7 @@ class Script(scripts.Script):
                 prompt_matrix_parts.extend(items)
 
         all_prompts = [original_prompt]
-        
+        #只能叠4层到10w
         while True:
             found_matrix = False
             for this_prompt in all_prompts:
