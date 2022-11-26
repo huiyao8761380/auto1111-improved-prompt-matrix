@@ -9,10 +9,10 @@ from modules.processing import process_images, StableDiffusionProcessingTxt2Img
 
 class Script(scripts.Script):
     def title(self):
-        return "random prompt"
+        return "random prompt 0.1"
 
     def ui(self, is_img2img):
-        dummy = gr.Textbox(label="random prompt script has been started",value="tag example:  ,<short|long|messy> hair,")
+        dummy = gr.Textbox(label="random prompt script has been started",value="tag example:,<short hair|long hair|messy hair>;   Batch count>=2,Batch size=1")
         #sametag = gr.Checkbox(label="Same tag can be generated.", value=False)
         #norand = gr.Checkbox(label="Not random,do each prompt", value=False)
         return [dummy]
@@ -22,55 +22,53 @@ class Script(scripts.Script):
 
         original_prompt = p.prompt[0] if type(p.prompt) == list else p.prompt
 
-        matrix_count = 0
-        prompt_matrix_parts = []
-        """
-        for data in re.finditer(r'(<([^>]+)>)', original_prompt):
-            if data:
-                matrix_count += 1
-                span = data.span(1)
-                items = data.group(2).split("|")
-                prompt_matrix_parts.extend(items)
-        """
         all_prompts = [original_prompt]
         #p_prompt=all_prompts[0]
         #之前只能叠4层到10w
 
         #p.prompt[0].
-        datafinish=False
+        ####datafinish=False
         for this_prompt in all_prompts:
             for data in re.finditer(r'(<([^>]+)>)', this_prompt):
                 if data:
-                    datafinish=True
+                    ####datafinish=True
                     span = data.span(1)
                     new_prompt = this_prompt[:span[0]]
                     gen_prompt = this_prompt[span[0]:]
-                    print(f"new_prompt：{new_prompt}")
-                    print(f"gen_prompt：{gen_prompt}")
-                break
-
-        if datafinish==True:
-            for this_prompt in all_prompts:
-                my_prompt=""
-                all_prompts.remove(this_prompt)
-                for data in re.finditer(r'(<([^>]+)>)', gen_prompt):
-                    if data:
-                        items = data.group(2).split("|")#=list
-                        length=len(items)-1
-                        rand_item = items[random.randint(0,length)]
-                        my_prompt=my_prompt+rand_item.strip()+","
-                        
-                this_prompt=new_prompt+my_prompt
-                all_prompts.append(this_prompt)
+                    #print(f"new_prompt：{new_prompt}")
+                    #print(f"gen_prompt：{gen_prompt}")
+                    break
+        
+        print(f"new_prompt：{new_prompt}")
+        print(f"gen_prompt：{gen_prompt}")
+        
+        ####if datafinish==True:
+        #for i_prompt in all_prompts:
+        for ip in range(p.n_iter):
+            
+            my_prompt=""
+            #all_prompts.remove(i_prompt)
+            for data in re.finditer(r'(<([^>]+)>)', gen_prompt):
+                if data:
+                    
+                    items = data.group(2).split("|")#=list
+                    length=len(items)-1
+                    rand_item = items[random.randint(0,length)]
+                    my_prompt=my_prompt+rand_item.strip()+","
+            i_prompt=new_prompt+my_prompt
+            #all_prompts
+            all_prompts.append(i_prompt)
+            print(f"i_prompt：{i_prompt}")
+            print(f"all_prompts len：{len(all_prompts)}")
  
+        
+        #----total_images = len(all_prompts) * p.n_iter
+        #----print(f"Prompt matrix will create {total_images} images")
 
-        total_images = len(all_prompts) * p.n_iter
-        print(f"Prompt matrix will create {total_images} images")
-
-        total_steps = p.steps * total_images
-        if isinstance(p, StableDiffusionProcessingTxt2Img) and p.enable_hr:
-            total_steps *= 2
-        shared.total_tqdm.updateTotal(total_steps)
+        #----total_steps = p.steps * total_images
+        #----if isinstance(p, StableDiffusionProcessingTxt2Img) and p.enable_hr:
+            #total_steps *= 2
+        #----shared.total_tqdm.updateTotal(total_steps)
 
         
         
