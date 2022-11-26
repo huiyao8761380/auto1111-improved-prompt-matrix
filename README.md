@@ -16,7 +16,6 @@ Will output 4 prompts: `a corgi wearing goggles`, `a corgi wearing a hat`, `a ca
 
 Each output prompt will be generated for each seed when using a `batch count` > 1. `batch size` is ignored.
 ##
-![1](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en2.png)
  ##
 
  ##
@@ -25,9 +24,8 @@ Each output prompt will be generated for each seed when using a `batch count` > 
 
 ![CN](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/cn1.png)
 ##
-![2](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/cn2.png)
 
- ### 脚本任选其一（Choose either script）
+ ### 0.1
  
  ## setup script：
  ![en3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en3.png)
