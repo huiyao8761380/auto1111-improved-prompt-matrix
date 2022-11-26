@@ -12,7 +12,7 @@ class Script(scripts.Script):
         return "random prompt 0.1"
 
     def ui(self, is_img2img):
-        dummy = gr.Textbox(label="random prompt script has been started",value="tag example:,<short hair|long hair|messy hair>;   Batch count>=2,Batch size=1")
+        dummy = gr.Textbox(label="random prompt script has been started",value="tag example:,<short hair|long hair|messy hair>;   Batch count>=1,Batch size=1")
         #sametag = gr.Checkbox(label="Same tag can be generated.", value=False)
         #norand = gr.Checkbox(label="Not random,do each prompt", value=False)
         return [dummy]
@@ -35,12 +35,10 @@ class Script(scripts.Script):
                     span = data.span(1)
                     new_prompt = this_prompt[:span[0]]
                     gen_prompt = this_prompt[span[0]:]
-                    #print(f"new_prompt：{new_prompt}")
-                    #print(f"gen_prompt：{gen_prompt}")
                     break
         
-        print(f"new_prompt：{new_prompt}")
-        print(f"gen_prompt：{gen_prompt}")
+        #print(f"new_prompt：{new_prompt}")
+        #print(f"gen_prompt：{gen_prompt}")
         
         ####if datafinish==True:
         #for i_prompt in all_prompts:
