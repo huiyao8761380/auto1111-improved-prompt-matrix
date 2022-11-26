@@ -44,7 +44,7 @@ class Script(scripts.Script):
         
         ####if datafinish==True:
         #for i_prompt in all_prompts:
-        for ip in range(p.n_iter):
+        for ip in range(p.n_iter+1):
             
             my_prompt=""
             #all_prompts.remove(i_prompt)
@@ -56,25 +56,16 @@ class Script(scripts.Script):
                     rand_item = items[random.randint(0,length)]
                     my_prompt=my_prompt+rand_item.strip()+","
             i_prompt=new_prompt+my_prompt
-            #all_prompts
             all_prompts.append(i_prompt)
             print(f"i_prompt：{i_prompt}")
             print(f"all_prompts len：{len(all_prompts)}")
  
-        
-        #----total_images = len(all_prompts) * p.n_iter
-        #----print(f"Prompt matrix will create {total_images} images")
+        all_prompts.remove(all_prompts[0])
 
-        #----total_steps = p.steps * total_images
-        #----if isinstance(p, StableDiffusionProcessingTxt2Img) and p.enable_hr:
-            #total_steps *= 2
-        #----shared.total_tqdm.updateTotal(total_steps)
 
         
         
-        
-        #all_prompts.append(rand_prompt)
-        #if norand:
+
         p.prompt = all_prompts * p.n_iter #all_prompts * p.n_iter
         #else:
         #p.prompt = out_prompts*p.n_iter
