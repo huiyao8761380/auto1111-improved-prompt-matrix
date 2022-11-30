@@ -20,7 +20,7 @@ class Script(scripts.Script):
         original_prompt = p.prompt[0] if type(p.prompt) == list else p.prompt
 
         all_prompts = [original_prompt]
-        #之前只能叠4层到10w
+        #之前的矩阵只能叠4层tag到10w
 
         split_str=['']
         right_str=[]
@@ -60,7 +60,7 @@ class Script(scripts.Script):
         for ip in range(p.n_iter+1):
             
             my_prompt=""
-            #first_prompt=gen_prompt.split("<")
+            
             i=0
             for data in re.finditer(r'(<([^>]+)>)', gen_prompt):
                 if data:
@@ -79,11 +79,9 @@ class Script(scripts.Script):
             all_prompts.append(i_prompt)
             #print(f"i_prompt：{i_prompt}")
             #print(f"all_prompts len：{len(all_prompts)}")
+            
         if gen_prompt != '':
             all_prompts.remove(all_prompts[0])
-
-
-        
         
 
         p.prompt = all_prompts * p.n_iter #all_prompts * p.n_iter
