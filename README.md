@@ -1,10 +1,12 @@
 # random prompt
 
+it's script for stable diffusion webui
+
 [advanced-prompt-matrix](https://github.com/GRMrGecko/stable-diffusion-webui-automatic/blob/advanced_matrix/scripts/advanced_prompt_matrix.py)
 
-[advanced-prompt-matrix](https://github.com/ArrowM/auto1111-improved-prompt-matrix)
+[auto1111-improved-prompt-matrix](https://github.com/ArrowM/auto1111-improved-prompt-matrix)
 
-[Custom-Scripts](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts)
+[stable diffusion webui Custom Scripts](https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Custom-Scripts)
 
 ## Usage
 
