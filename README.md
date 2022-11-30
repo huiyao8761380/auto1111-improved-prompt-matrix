@@ -17,17 +17,17 @@ Will output random prompts: `,short hair,`,`,long hair,`,`,messy hair,`
 `Batch count`>=1,`Batch size`=1
 
 
-## Usage
+## 用法
 
-Use `<` `>` to create a group of alternate texts. Separate text options with `|`. For example:
+用 `<` `>` 创建一组替代文本。用 `|`分隔文本选项. 例如:
 
-An input of`,<short|long|messy> hair,` 
+输入`,<short|long|messy> hair,` 
 
-Will output random prompts: `,short hair,`,`,long hair,`,`,messy hair,`
+会输出随机提示： `,short hair,`,`,long hair,`,`,messy hair,`
 
 `Batch count`>=1,`Batch size`=1
 
-##
+## Select the script to run；选择脚本则可运行
 
  ## setup script：
  ![en3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en3.png)
