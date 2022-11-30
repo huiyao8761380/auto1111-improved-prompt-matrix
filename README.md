@@ -1,6 +1,6 @@
-# auto1111-improved-prompt-matrix-random
+# random prompt
 
-This script is [advanced-prompt-matrix](https://github.com/GRMrGecko/stable-diffusion-webui-automatic/blob/advanced_matrix/scripts/advanced_prompt_matrix.py) modified to support `batch count`. Grids are not created.  
+[advanced-prompt-matrix](https://github.com/GRMrGecko/stable-diffusion-webui-automatic/blob/advanced_matrix/scripts/advanced_prompt_matrix.py)
 
 [advanced-prompt-matrix](https://github.com/ArrowM/auto1111-improved-prompt-matrix)
 
@@ -8,26 +8,27 @@ This script is [advanced-prompt-matrix](https://github.com/GRMrGecko/stable-diff
 
 ## Usage
 
-Use `<` `>` to create a group of alternate texts. Separate text options with `|`. Multiple groups and multiple options can be used. For example:
+Use `<` `>` to create a group of alternate texts. Separate text options with `|`. For example:
 
 An input of`,<short|long|messy> hair,` 
 
 Will output random prompts: `,short hair,`,`,long hair,`,`,messy hair,`
 
-Batch count>=1,Batch size=1
+`Batch count`>=1,`Batch size`=1
+
+
+## Usage
+
+Use `<` `>` to create a group of alternate texts. Separate text options with `|`. For example:
+
+An input of`,<short|long|messy> hair,` 
+
+Will output random prompts: `,short hair,`,`,long hair,`,`,messy hair,`
+
+`Batch count`>=1,`Batch size`=1
 
 ##
- ##
 
- ##
-
- ##
-
-![CN](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/cn1.png)
-##
-
- ### 0.1
- 
  ## setup script：
  ![en3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en3.png)
  ![cn3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/cn3.png)
