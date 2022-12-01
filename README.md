@@ -29,7 +29,10 @@ Will output random prompts: `,short hair,`,`,long hair,`,`,messy hair,`
 
 `Batch count`>=1,`Batch size`=1
 
-## Select the script to run；选择脚本则可运行
+ ## Select the script to run；选择脚本则可运行
+ ![en2](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en2.png)
+ ![en0](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en0.png)
+ ![en1](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en1.png)
 
  ## setup script：
  ![en3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en3.png)
