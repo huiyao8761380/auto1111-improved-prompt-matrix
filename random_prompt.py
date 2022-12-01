@@ -6,6 +6,8 @@ import modules.scripts as scripts
 import modules.sd_samplers
 from modules.processing import process_images, StableDiffusionProcessingTxt2Img
 
+#https://github.com/huiyao8761380/random-prompt
+# ,1girl,<short|long|messy> hair,<smile|blush|sad>,
 
 class Script(scripts.Script):
     def title(self):
@@ -20,7 +22,7 @@ class Script(scripts.Script):
         original_prompt = p.prompt[0] if type(p.prompt) == list else p.prompt
 
         all_prompts = [original_prompt]
-        #之前的矩阵只能叠4层tag到10w
+        
 
         split_str=['']
         right_str=[]
