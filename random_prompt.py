@@ -15,9 +15,10 @@ class Script(scripts.Script):
 
     def ui(self, is_img2img):
         dummy = gr.Textbox(label="random prompt script has been started",value="tag example:,<short|long|messy> hair;   Batch count>=1,Batch size=1")
-        return [dummy]
+        sameseed = gr.Checkbox(label="Same seed generated.", value=False)
+        return [dummy,sameseed]
 
-    def run(self, p, dummy):
+    def run(self, p, dummy, sameseed):
 
         original_prompt = p.prompt[0] if type(p.prompt) == list else p.prompt
 
@@ -87,6 +88,8 @@ class Script(scripts.Script):
         
 
         p.prompt = all_prompts * p.n_iter #all_prompts * p.n_iter
+        if sameseed == True:
+            p.seed =[item for item in range(int(p.seed), int(p.seed) + p.n_iter) for _ in range(len(all_prompts))]
         #print(f"p.n_iter：{p.n_iter}") #=batch_count
         p.do_not_save_grid = True
         p.prompt_for_display = original_prompt
