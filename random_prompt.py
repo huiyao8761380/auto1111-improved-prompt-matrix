@@ -11,10 +11,10 @@ from modules.processing import process_images, StableDiffusionProcessingTxt2Img
 
 class Script(scripts.Script):
     def title(self):
-        return "Random prompt v0.5"
+        return "Random prompt v0.6"
 
     def ui(self, is_img2img):
-        dummy = gr.Textbox(label="random prompt script has been started",value="tag example:,<short|long|messy> hair;   Batch count>=1,Batch size=1")
+        dummy = gr.Textbox(label="random prompt script has been started",value="Batch count>=1,Batch size=1,random tags are recommended at the end:  ,<short|long|messy> hair, ")
         sameseed = gr.Checkbox(label="Same seed generated.", value=False)
         return [dummy,sameseed]
 
