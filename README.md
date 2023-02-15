@@ -10,9 +10,9 @@ it's script for stable diffusion webui
 
 ## Usage
 
-Use `<` `>` to create a group of alternate texts. Separate text options with `|`. For example:
+Use `【` `】` to create a group of alternate texts. Separate text options with `|`. For example:
 
-An input of`,<short|long|messy> hair,` 
+An input of`,【short|long|messy】 hair,` 
 
 Will output random prompts: `,short hair,`,`,long hair,`,`,messy hair,`
 
@@ -21,18 +21,17 @@ Will output random prompts: `,short hair,`,`,long hair,`,`,messy hair,`
 
 ## 用法
 
-用 `<` `>` 创建一组替代文本。用 `|`分隔文本选项. 例如:
+用 `【` `】` 创建一组替代文本。用 `|`分隔文本选项. 例如:
 
-输入`,<short|long|messy> hair,` 
+输入`,【short|long|messy】 hair,` 
 
 会输出随机提示： `,short hair,`,`,long hair,`,`,messy hair,`
 
 `Batch count`>=1,`Batch size`=1
 
  ## Select the script to run；选择脚本则可运行
- ![en2](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en2.png)
- ![en0](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en0.png)
- ![en1](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en1.png)
+ ![en0](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en0.jpg)
+ ![en1](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en1.jpg)
 
  ## setup script：
  ![en3](https://github.com/huiyao8761380/auto1111-improved-prompt-matrix-random/blob/main/en3.png)

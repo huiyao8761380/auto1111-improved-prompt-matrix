@@ -7,16 +7,14 @@ import modules.sd_samplers
 from modules.processing import process_images, StableDiffusionProcessingTxt2Img
 
 #https://github.com/huiyao8761380/random-prompt
-# ,1girl,【short|long|messy】 hair,【smile|blush|sad】,
-#Random prompt v0.7 因需要使用LORA模型的原因文本替换了'<|||>'为'【|||】'
-#能力有限-务必将随机tag置于末尾,因为就是这么设计的...
+# ,1girl,<short|long|messy> hair,<smile|blush|sad>,
 
 class Script(scripts.Script):
     def title(self):
-        return "Random prompt"
+        return "Random prompt v0.6"
 
     def ui(self, is_img2img):
-        dummy = gr.Textbox(label="random prompt script has been started",value="Batch count >=1,Batch size=1,random tags are recommended at the end:  ,【short|long|messy】 hair, ")
+        dummy = gr.Textbox(label="random prompt script has been started",value="Batch count>=1,Batch size=1,random tags are recommended at the end:  ,<short|long|messy> hair, ")
         sameseed = gr.Checkbox(label="Same seed generated.", value=False)
         return [dummy,sameseed]
 
@@ -33,13 +31,13 @@ class Script(scripts.Script):
         new_prompt=''
         
         for this_prompt in all_prompts:
-            for data in re.finditer(r'(【([^】]+)】)', this_prompt):
+            for data in re.finditer(r'(<([^>]+)>)', this_prompt):
                 if data:
                     span = data.span(1)
                     new_prompt = this_prompt[:span[0]]
                     gen_prompt = this_prompt[span[0]:]
-                    this_str=gen_prompt.replace("【","】")
-                    split_str =this_str.split("】")
+                    this_str=gen_prompt.replace("<",">")
+                    split_str =this_str.split(">")
                     break
         
         #print(f"new_prompt：{new_prompt}")
@@ -67,7 +65,7 @@ class Script(scripts.Script):
             my_prompt=""
             
             i=0
-            for data in re.finditer(r'(【([^】]+)】)', gen_prompt):
+            for data in re.finditer(r'(<([^>]+)>)', gen_prompt):
                 if data:
 
                     items = data.group(2).split("|")#=list
